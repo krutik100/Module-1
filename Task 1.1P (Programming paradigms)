@@ -1,0 +1,18 @@
+int light = 10;             
+int pirsenPin = 2;                 
+int Status = 0;                  
+void setup() {
+ pinMode(light, OUTPUT);     
+ pinMode(pirsenPin, INPUT);     
+ Serial.begin(9600);
+}
+void loop(){
+ Status = digitalRead(pirsenPin); 
+ if (Status == HIGH) {            
+   digitalWrite(light, HIGH);  
+   Serial.println("Motion Detected!");
+ } 
+ else {
+   digitalWrite(light, LOW); 
+ }
+}
