@@ -1,0 +1,30 @@
+int light = 10;            
+int pirsenPin = 2;                
+int pirsenPin1 = 3;   
+
+void setup() {
+  pinMode(light,OUTPUT);
+  pinMode(pirsenPin,INPUT);
+  pinMode(pirsenPin1,INPUT);
+  attachInterrupt(0,turnLEDOn,RISING);
+  attachInterrupt(1,turnLEDOff,FALLING);
+  
+  Serial.begin(9600);
+}
+
+void loop() {
+
+}
+
+void turnLEDOn()
+{
+  digitalWrite(10,HIGH);
+  Serial.println("Motion Detected!");
+  
+}
+
+void turnLEDOff()
+{
+  digitalWrite(10,LOW);
+}
+
